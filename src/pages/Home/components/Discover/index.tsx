@@ -1,6 +1,8 @@
+import * as Dialog from '@radix-ui/react-dialog';
 import React from 'react';
 import { Mystery_Quest } from 'next/font/google';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { SearchModal } from '../SearchModal';
 
 const mystery = Mystery_Quest({
 	subsets: ['latin'],
@@ -17,18 +19,26 @@ export const Discover = () => {
 					Get to know more about your cat breed
 				</p>
 
-				<div className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-50 rounded-full'>
-					<input
-						type='text'
-						placeholder='Search'
-						className='w-full h-full rounded-full text-xs text-[#291507] p-3 pr-7 placeholder:text-xs placeholder:text-[#291507]'
-					/>
-					<AiOutlineSearch
-						className='absolute right-2'
-						color='black'
-						role='button'
-					/>
-				</div>
+				<Dialog.Root>
+					<Dialog.Trigger
+						className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-500 rounded-full'
+						// disabled
+					>
+						{/* <div className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-500 rounded-full'> */}
+						<input
+							type='text'
+							placeholder='Search'
+							className='w-full h-full rounded-full text-xs text-[#291507] p-3 pr-7 placeholder:text-xs placeholder:text-[#291507] z-0'
+						/>
+						<AiOutlineSearch
+							className='absolute right-2'
+							color='black'
+							role='button'
+						/>
+						{/* </div> */}
+					</Dialog.Trigger>
+					<SearchModal />
+				</Dialog.Root>
 			</div>
 
 			<div className='px-7 pb-14 text-primary-text-color'>
