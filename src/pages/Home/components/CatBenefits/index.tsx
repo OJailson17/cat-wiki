@@ -3,7 +3,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 export const CatBenefits = () => {
 	return (
-		<section className='w-[90%] mx-auto mt-16 flex flex-col items-center gap-16 lg:flex-row'>
+		<section className='w-[90%] mx-auto mt-16 flex flex-col items-center gap-16 lg:flex-row lg:mt-24 lg:px-28'>
 			<div className='mt-1'>
 				<div className='w-12 h-1  bg-primary-text-color rounded-full' />
 
