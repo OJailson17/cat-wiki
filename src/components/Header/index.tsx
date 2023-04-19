@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Header = () => {
 	return (
-		<header className='w-[90%] mx-auto mt-3 lg:w-[85%]'>
+		<header className='w-[90%] max-w-[1200px] mx-auto mt-3 min-[500px]:w-[85%]'>
 			<Image src={'/assets/CatwikiLogo.svg'} alt='' width={128} height={43} />
 		</header>
 	);

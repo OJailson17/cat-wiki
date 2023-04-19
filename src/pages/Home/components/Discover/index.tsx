@@ -15,8 +15,8 @@ export const Discover = () => {
 	return (
 		<div className='max-w-[1200px] w-[90%] mx-auto mt-8 bg-[#E3E1DC] rounded-[42px] '>
 			{/* Image section */}
-			<div className='bg-hero-image-sm min-h-[150px] px-4 pb-6 bg-no-repeat bg-cover rounded-t-[42px] flex flex-col text-white lg:bg-hero-image-lg lg:min-h-[538px] lg:px-24'>
-				<p className={`text-base ${mystery.className} mt-5 lg:hidden`}>
+			<div className='bg-hero-image-sm min-h-[150px] px-4 pb-6 bg-cover bg-no-repeat bg-top rounded-t-[42px] flex flex-col text-white min-[500px]:h-[300px] md:bg-hero-image-md lg:bg-hero-image-lg lg:min-h-[450px] xl:min-h-[538px] lg:px-24'>
+				<p className={`text-base ${mystery.className} mt-5 min-[500px]:hidden`}>
 					CatWiki
 				</p>
 
@@ -25,7 +25,7 @@ export const Discover = () => {
 					alt=''
 					width={207}
 					height={87}
-					className=' hidden invert contrast-[150%] mt-28 lg:block'
+					className=' hidden invert contrast-[150%] min-[500px]:mt-14 min-[500px]:block lg:mt-28'
 				/>
 				<p className='w-[60%] text-sm font-medium mt-2 lg:text-2xl lg:w-[370px]'>
 					Get to know more about your cat breed
@@ -33,7 +33,7 @@ export const Discover = () => {
 
 				<Dialog.Root>
 					<Dialog.Trigger
-						className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-500 rounded-full lg:mt-12 lg:w-96 lg:h-11 lg:disabled'
+						className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-500 rounded-full min-[500px]:w-40 lg:mt-12 lg:w-96 lg:h-11 lg:disabled'
 						disabled
 					>
 						{/* <div className='w-32 h-8 mt-5 relative flex items-center justify-between gap-3 bg-green-500 rounded-full'> */}
@@ -52,18 +52,18 @@ export const Discover = () => {
 				</Dialog.Root>
 			</div>
 
-			<div className='px-7 pb-14 mt-5 text-primary-text-color lg:mt-24 lg:px-28'>
-				<p className=' font-medium'>Most Searched Breeds</p>
+			<div className='px-7 pb-14 mt-5 text-primary-text-color min-[500px]:mt-14  lg:px-28 xl:mt-24'>
+				<p className='font-medium'>Most Searched Breeds</p>
 
 				{/* Divider */}
 				<div className='w-10 h-1 mt-1 bg-primary-text-color rounded-full' />
 
 				<div className='mt-5 flex justify-between'>
-					<h2 className='w-2/3 font-bold text-lg  lg:text-5xl lg:w-[500px]'>
+					<h2 className='w-2/3 font-bold text-lg md:text-3xl lg:text-5xl lg:w-[500px]'>
 						66+ Breeds For you to discover
 					</h2>
 
-					<div className='hidden items-center gap-3 mt-6 lg:flex'>
+					<div className='hidden items-center gap-3 mt-6 min-[500px]:flex'>
 						<p className='text-xs font-bold text-[#29150799] cursor-pointer'>
 							READ MORE
 						</p>
@@ -72,7 +72,7 @@ export const Discover = () => {
 				</div>
 
 				{/* Cats images grid */}
-				<div className='grid grid-cols-2 gap-3 mt-7 lg:grid-cols-4 lg:gap-12 lg:mt-11'>
+				<div className='grid grid-cols-2 gap-3 mt-7 min-[500px]:grid-cols-4 lg:gap-12 lg:mt-11'>
 					<div>
 						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl' />
 						<p className='text-xs font-semibold mt-3'>Bengal</p>
