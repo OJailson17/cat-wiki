@@ -7,19 +7,16 @@ export default function Breeds() {
 		<>
 			<Header />
 
-			<main className='w-[90%] max-w-[1200px] mx-auto'>
-				<h1 className='text-2xl font-bold text-primary-text-color text-center mt-7'>
+			<main className='w-[90%] max-w-[1200px] mx-auto lg:mt-12 md:w-[85%]'>
+				<h1 className='text-2xl font-bold text-primary-text-color text-center mt-7 md:text-4xl md:text-left'>
 					Top 10 most searched breeds
 				</h1>
 
-				<div className='flex flex-col gap-7 mt-7'>
+				<div className='flex flex-col gap-7 mt-7 lg:gap-14 md:mt-12'>
 					<CatDetail
 						catBreed='1. Bengal'
 						catImage='bg-red-300'
-						catDescription="Bengals are a lot of fun to live with, but they're definitely not
-					the cat for everyone, or for first-time cat owners. Extremely
-					intelligent, curious and active, they demand a lot of interaction and
-					woe betide the owner who doesn't provide it."
+						catDescription="Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for first-time cat owners. Extremely intelligent, curious and active, they demand a lot of interaction and woe betide the owner who doesn't provide it."
 					/>
 					<CatDetail
 						catBreed='2. Chartreux'

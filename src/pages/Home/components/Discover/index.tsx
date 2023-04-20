@@ -5,6 +5,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchModal } from '../SearchModal';
 import { BsArrowRight } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const mystery = Mystery_Quest({
 	subsets: ['latin'],
@@ -64,9 +65,12 @@ export const Discover = () => {
 					</h2>
 
 					<div className='hidden items-center gap-3 mt-6 min-[500px]:flex'>
-						<p className='text-xs font-bold text-[#29150799] cursor-pointer'>
+						<Link
+							href={'/breeds'}
+							className='text-xs font-bold text-[#29150799]'
+						>
 							READ MORE
-						</p>
+						</Link>
 						<BsArrowRight color='#29150799' />
 					</div>
 				</div>
