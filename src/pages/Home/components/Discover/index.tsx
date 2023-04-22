@@ -54,7 +54,9 @@ export const Discover = () => {
 			</div>
 
 			<div className='px-7 pb-14 mt-5 text-primary-text-color min-[500px]:mt-14  lg:px-28 xl:mt-24'>
-				<p className='font-medium'>Most Searched Breeds</p>
+				<Link href={'/breeds'} className='font-medium'>
+					Most Searched Breeds
+				</Link>
 
 				{/* Divider */}
 				<div className='w-10 h-1 mt-1 bg-primary-text-color rounded-full' />
@@ -65,10 +67,7 @@ export const Discover = () => {
 					</h2>
 
 					<div className='hidden items-center gap-3 mt-6 min-[500px]:flex'>
-						<Link
-							href={'/breeds'}
-							className='text-xs font-bold text-[#29150799]'
-						>
+						<Link href={'/'} className='text-xs font-bold text-[#29150799]'>
 							READ MORE
 						</Link>
 						<BsArrowRight color='#29150799' />
