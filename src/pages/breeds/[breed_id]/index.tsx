@@ -8,8 +8,8 @@ export default function BreedDetail() {
 		<>
 			<Header />
 
-			<div className='w-[90%]  mx-auto mt-12 flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between lg:w-[80%]'>
-				<div className='w-52 h-52 relative lg:w-[370px] lg:h-[370px] rounded-3xl'>
+			<div className='w-[90%] max-w-7xl  mx-auto mt-12 flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between lg:w-[80%]'>
+				<div className='w-52 h-52 relative md:w-72 md:h-72 lg:w-[370px] lg:h-[370px] rounded-3xl'>
 					<Image
 						src='https://source.unsplash.com/featured/208x208'
 						alt=''
@@ -81,10 +81,10 @@ export default function BreedDetail() {
 				</div>
 			</div>
 
-			<div className='w-[90%] mx-auto mt-12'>
+			<div className='w-[90%] max-w-7xl mx-auto mt-12'>
 				<h2 className='font-semibold text-2xl'>Other photos</h2>
 
-				<div className='grid grid-cols-2 gap-4 mt-10 lg:grid-cols-4'>
+				<div className='grid grid-cols-2 gap-4 mt-10  md:grid-cols-3 lg:grid-cols-4'>
 					{[...Array(8)].map((el, i) => (
 						<Image
 							src='https://source.unsplash.com/featured/278x278'
