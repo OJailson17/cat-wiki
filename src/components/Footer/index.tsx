@@ -4,7 +4,7 @@ import React from 'react';
 
 export const Footer = () => {
 	return (
-		<footer className='w-[90%] max-w-[1200px] mx-auto mt-6 py-7 px-4 flex flex-col gap-6 justify-center bg-black rounded-t-[42px] min-[500px]:mt-24 min-[500px]:flex-row min-[500px]:justify-between min-[500px]:px-8 min-[500px]:items-center'>
+		<footer className='w-[90%] max-w-7xl mx-auto mt-6 py-7 px-4 flex flex-col gap-6 justify-center bg-black rounded-t-[42px] min-[500px]:mt-24 min-[500px]:flex-row min-[500px]:justify-between min-[500px]:px-8 min-[500px]:items-center'>
 			<Image
 				src={'/assets/CatwikiLogo.svg'}
 				alt=''

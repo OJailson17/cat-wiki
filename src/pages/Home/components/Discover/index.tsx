@@ -14,7 +14,7 @@ const mystery = Mystery_Quest({
 
 export const Discover = () => {
 	return (
-		<div className='max-w-[1200px] w-[90%] mx-auto mt-8 bg-[#E3E1DC] rounded-[42px] '>
+		<div className='max-w-7xl w-[90%] mx-auto mt-8 bg-[#E3E1DC] rounded-[42px] '>
 			{/* Image section */}
 			<div className='bg-hero-image-sm min-h-[150px] px-4 pb-6 bg-cover bg-no-repeat bg-top rounded-t-[42px] flex flex-col text-white min-[500px]:h-[300px] md:bg-hero-image-md lg:bg-hero-image-lg lg:min-h-[450px] xl:min-h-[538px] lg:px-24'>
 				<p className={`text-base ${mystery.className} mt-5 min-[500px]:hidden`}>

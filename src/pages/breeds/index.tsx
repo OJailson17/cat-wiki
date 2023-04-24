@@ -7,7 +7,7 @@ export default function Breeds() {
 		<>
 			<Header />
 
-			<main className='w-[90%] max-w-[1200px] mx-auto lg:mt-12 md:w-[85%]'>
+			<main className='w-[90%] max-w-7xl mx-auto lg:mt-12 md:w-[85%]'>
 				<h1 className='text-2xl font-bold text-primary-text-color text-center mt-7 md:text-4xl md:text-left'>
 					Top 10 most searched breeds
 				</h1>
