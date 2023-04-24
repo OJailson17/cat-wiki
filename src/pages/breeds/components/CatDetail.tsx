@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface CatDetailProps {
 	catBreed: string;
 	catImage?: string;
@@ -12,8 +14,16 @@ export const CatDetail = ({
 	return (
 		<div className='flex gap-6'>
 			<div
-				className={`w-32 h-32 rounded-3xl ${catImage} max-[374px]:w-28 max-[374px]:h-28`}
-			/>
+				className={`w-32 h-32 rounded-3xl ${catImage} max-[374px]:w-28 max-[374px]:h-28 relative`}
+			>
+				<Image
+					src='https://source.unsplash.com/featured/208x208'
+					alt=''
+					fill
+					style={{ objectFit: 'cover' }}
+					className={`rounded-3xl`}
+				/>
+			</div>
 
 			<div className='w-[50%] md:w-[67%]'>
 				<h2 className='font-semibold text-2xl'>{catBreed}</h2>

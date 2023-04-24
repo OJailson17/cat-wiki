@@ -77,19 +77,51 @@ export const Discover = () => {
 				{/* Cats images grid */}
 				<div className='grid grid-cols-2 gap-3 mt-7 min-[500px]:grid-cols-4 lg:gap-12 lg:mt-11'>
 					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl' />
+						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
+							<Image
+								src='https://source.unsplash.com/featured/208x208'
+								alt=''
+								fill
+								style={{ objectFit: 'cover' }}
+								className={`rounded-xl`}
+							/>
+						</div>
 						<p className='text-xs font-semibold mt-3'>Bengal</p>
 					</div>
 					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl' />
+						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
+							<Image
+								src='https://source.unsplash.com/featured/208x208'
+								alt=''
+								fill
+								style={{ objectFit: 'cover' }}
+								className={`rounded-xl`}
+							/>
+						</div>
 						<p className='text-xs font-semibold mt-3'>Savannah</p>
 					</div>
 					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl' />
+						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
+							<Image
+								src='https://source.unsplash.com/featured/208x208'
+								alt=''
+								fill
+								style={{ objectFit: 'cover' }}
+								className={`rounded-xl`}
+							/>
+						</div>
 						<p className='text-xs font-semibold mt-3'>Norwegian Forest Cat</p>
 					</div>
 					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl' />
+						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
+							<Image
+								src='https://source.unsplash.com/featured/208x208'
+								alt=''
+								fill
+								style={{ objectFit: 'cover' }}
+								className={`rounded-xl`}
+							/>
+						</div>{' '}
 						<p className='text-xs font-semibold mt-3'>Selkirk Rex</p>
 					</div>
 				</div>
