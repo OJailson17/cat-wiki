@@ -104,7 +104,7 @@ export const Discover = () => {
 				{/* Cats images grid */}
 				<div className='grid grid-cols-2 gap-3 mt-7 min-[500px]:grid-cols-4 lg:gap-12 lg:mt-11'>
 					{cats?.map((cat, i) => (
-						<Link href={`/breeds/${cat.id}`} key={cat?.id || i}>
+						<Link href={`/breeds/${cat.reference_image_id}`} key={cat?.id || i}>
 							<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
 								<Image
 									src={`https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`}
