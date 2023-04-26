@@ -1,18 +1,45 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Mystery_Quest } from 'next/font/google';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchModal } from '../SearchModal';
 import { BsArrowRight } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
+import { api } from '@/lib/axios';
 
 const mystery = Mystery_Quest({
 	subsets: ['latin'],
 	weight: ['400'],
 });
 
+interface ICats {
+	id: string;
+	name: string;
+	reference_image_id: string;
+}
+
 export const Discover = () => {
+	const [cats, setCats] = useState<ICats[]>([]);
+
+	// Make request to get the cats breeds data
+	const getCats = async () => {
+		try {
+			const catResponseData = await api.get('/breeds?limit=4');
+			const catsData = catResponseData.data as ICats[];
+
+			setCats(catsData);
+
+			console.log({ catsData });
+		} catch (error) {
+			console.log({ error });
+		}
+	};
+
+	useEffect(() => {
+		getCats();
+	}, []);
+
 	return (
 		<div className='max-w-7xl w-[90%] mx-auto mt-8 bg-[#E3E1DC] rounded-[42px] '>
 			{/* Image section */}
@@ -76,54 +103,20 @@ export const Discover = () => {
 
 				{/* Cats images grid */}
 				<div className='grid grid-cols-2 gap-3 mt-7 min-[500px]:grid-cols-4 lg:gap-12 lg:mt-11'>
-					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
-							<Image
-								src='https://source.unsplash.com/featured/208x208'
-								alt=''
-								fill
-								style={{ objectFit: 'cover' }}
-								className={`rounded-xl`}
-							/>
-						</div>
-						<p className='text-xs font-semibold mt-3'>Bengal</p>
-					</div>
-					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
-							<Image
-								src='https://source.unsplash.com/featured/208x208'
-								alt=''
-								fill
-								style={{ objectFit: 'cover' }}
-								className={`rounded-xl`}
-							/>
-						</div>
-						<p className='text-xs font-semibold mt-3'>Savannah</p>
-					</div>
-					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
-							<Image
-								src='https://source.unsplash.com/featured/208x208'
-								alt=''
-								fill
-								style={{ objectFit: 'cover' }}
-								className={`rounded-xl`}
-							/>
-						</div>
-						<p className='text-xs font-semibold mt-3'>Norwegian Forest Cat</p>
-					</div>
-					<div>
-						<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
-							<Image
-								src='https://source.unsplash.com/featured/208x208'
-								alt=''
-								fill
-								style={{ objectFit: 'cover' }}
-								className={`rounded-xl`}
-							/>
-						</div>{' '}
-						<p className='text-xs font-semibold mt-3'>Selkirk Rex</p>
-					</div>
+					{cats?.map((cat, i) => (
+						<Link href={`/breeds/${cat.id}`} key={cat?.id || i}>
+							<div className='max-w-[220px] h-[135px] bg-red-200 rounded-xl relative'>
+								<Image
+									src={`https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`}
+									alt=''
+									fill
+									style={{ objectFit: 'cover' }}
+									className={`rounded-xl`}
+								/>
+							</div>
+							<p className='text-xs font-semibold mt-3'>{cat?.name}</p>
+						</Link>
+					))}
 				</div>
 			</div>
 		</div>
