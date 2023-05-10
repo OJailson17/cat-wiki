@@ -2,8 +2,36 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { CatDetail } from './components/CatDetail';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { api } from '@/lib/axios';
+
+interface BreedsProps {
+	id: string;
+	name: string;
+	description: string;
+	reference_image_id: string;
+}
 
 export default function Breeds() {
+	const [breeds, setBreeds] = useState<BreedsProps[]>([]);
+
+	const onGetBreeds = async () => {
+		try {
+			const breedsResponse = await api.get(`/breeds?limit=10`);
+			const breeds = breedsResponse.data as BreedsProps[];
+
+			const shuffleBreeds = breeds.sort((a, b) => 0.5 - Math.random());
+
+			setBreeds(shuffleBreeds);
+		} catch (error) {
+			console.log({ error });
+		}
+	};
+
+	useEffect(() => {
+		onGetBreeds();
+	}, []);
+
 	return (
 		<>
 			<Header />
@@ -14,12 +42,15 @@ export default function Breeds() {
 				</h1>
 
 				<div className='flex flex-col gap-7 mt-7 lg:gap-14 md:mt-12'>
-					{[...Array(4)].map((el, i) => (
-						<Link href={`/breeds/id`} key={`${el} - ${i}`}>
+					{breeds.map((breed, i) => (
+						<Link
+							href={`/breeds/${breed.reference_image_id}`}
+							key={`${breed.id} - ${i}`}
+						>
 							<CatDetail
-								catBreed='1. Bengal'
-								catImage='bg-red-300'
-								catDescription="Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for first-time cat owners. Extremely intelligent, curious and active, they demand a lot of interaction and woe betide the owner who doesn't provide it."
+								catBreed={`${i + 1}. ${breed.name}`}
+								catImage={`https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg`}
+								catDescription={breed.description}
 							/>
 						</Link>
 					))}

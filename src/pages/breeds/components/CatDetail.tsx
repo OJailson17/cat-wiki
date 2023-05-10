@@ -14,10 +14,10 @@ export const CatDetail = ({
 	return (
 		<div className='flex gap-6'>
 			<div
-				className={`w-32 h-32 rounded-3xl ${catImage} max-[374px]:w-28 max-[374px]:h-28 relative`}
+				className={`w-32 h-32 rounded-3xl max-[374px]:w-28 max-[374px]:h-28 relative`}
 			>
 				<Image
-					src='https://source.unsplash.com/featured/208x208'
+					src={catImage || ''}
 					alt=''
 					fill
 					style={{ objectFit: 'cover' }}
