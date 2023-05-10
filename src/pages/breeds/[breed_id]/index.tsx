@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { api } from '@/lib/axios';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Loading } from '@/components/Loading';
 
 interface IBreed {
 	id: string;
@@ -38,12 +39,15 @@ export default function BreedDetail() {
 	const [breedId, setBreedId] = useState('');
 	const [cat, setCat] = useState<ICat>();
 	const [catImages, setCatImages] = useState<ICatImages[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const pathname = usePathname();
 
 	// console.log({ breedId });
 
 	const getCat = async () => {
+		setIsLoading(true);
+
 		try {
 			const response = await api.get(`/images/${breedId}`);
 			const cat = response.data as ICat;
@@ -53,7 +57,9 @@ export default function BreedDetail() {
 			setCat(cat);
 
 			await getCatImages(cat.breeds[0].id);
+			setIsLoading(false);
 		} catch (error) {
+			setIsLoading(false);
 			console.log({ error });
 		}
 	};
@@ -85,6 +91,8 @@ export default function BreedDetail() {
 			setBreedId(breedId);
 		}
 	}, [pathname]);
+
+	if (isLoading) return <Loading />;
 
 	return (
 		<>

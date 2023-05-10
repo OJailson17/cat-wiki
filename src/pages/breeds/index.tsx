@@ -4,6 +4,7 @@ import { CatDetail } from './components/CatDetail';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/axios';
+import { Loading } from '@/components/Loading';
 
 interface BreedsProps {
 	id: string;
@@ -14,16 +15,21 @@ interface BreedsProps {
 
 export default function Breeds() {
 	const [breeds, setBreeds] = useState<BreedsProps[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const onGetBreeds = async () => {
+		setIsLoading(true);
+
 		try {
 			const breedsResponse = await api.get(`/breeds?limit=10`);
 			const breeds = breedsResponse.data as BreedsProps[];
 
-			const shuffleBreeds = breeds.sort((a, b) => 0.5 - Math.random());
+			const shuffleBreeds = breeds.sort(() => 0.5 - Math.random());
 
 			setBreeds(shuffleBreeds);
+			setIsLoading(false);
 		} catch (error) {
+			setIsLoading(false);
 			console.log({ error });
 		}
 	};
@@ -31,6 +37,8 @@ export default function Breeds() {
 	useEffect(() => {
 		onGetBreeds();
 	}, []);
+
+	if (isLoading) return <Loading />;
 
 	return (
 		<>

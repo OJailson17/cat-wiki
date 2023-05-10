@@ -29,8 +29,6 @@ export const Discover = () => {
 			const catsData = catResponseData.data as ICats[];
 
 			setCats(catsData);
-
-			console.log({ catsData });
 		} catch (error) {
 			console.log({ error });
 		}
