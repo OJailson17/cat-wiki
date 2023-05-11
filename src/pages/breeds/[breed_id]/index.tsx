@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Header } from '@/components/Header';
-import { BreedsCharacteristics } from './components/BreedsCharacteristics';
+import { BreedsCharacteristics } from '../../../components/BreedCharacteristics';
 import { Footer } from '@/components/Footer';
 import Image from 'next/image';
 import { api } from '@/lib/axios';

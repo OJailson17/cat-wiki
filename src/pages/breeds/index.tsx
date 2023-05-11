@@ -1,6 +1,6 @@
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { CatDetail } from './components/CatDetail';
+import { CatDetail } from '../../components/CatDetail';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/axios';
