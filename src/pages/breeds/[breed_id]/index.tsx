@@ -8,6 +8,7 @@ import { api } from '@/lib/axios';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Loading } from '@/components/Loading';
+import Head from 'next/head';
 
 interface IBreed {
 	id: string;
@@ -96,6 +97,10 @@ export default function BreedDetail() {
 
 	return (
 		<>
+			<Head>
+				<title>{cat?.breeds[0].name} | Cat Wiki</title>
+			</Head>
+
 			<Header />
 
 			<div className='w-[90%] max-w-7xl  mx-auto mt-12 flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between lg:w-[80%]'>

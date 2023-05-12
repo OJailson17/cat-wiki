@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/axios';
 import { Loading } from '@/components/Loading';
+import Head from 'next/head';
 
 interface BreedsProps {
 	id: string;
@@ -42,6 +43,10 @@ export default function Breeds() {
 
 	return (
 		<>
+			<Head>
+				<title>Top 10 | Cat Wiki</title>
+			</Head>
+
 			<Header />
 
 			<main className='w-[90%] max-w-7xl mx-auto lg:mt-12 md:w-[85%]'>
